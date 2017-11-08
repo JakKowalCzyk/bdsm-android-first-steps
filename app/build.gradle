@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
     compileSdkVersion 26
@@ -26,7 +27,8 @@ dependencies {
     })
     compile group: 'org.mindrot', name: 'jbcrypt', version: '0.3m'
     compile group: 'commons-codec', name: 'commons-codec', version: '1.10'
-
+    compile 'org.greenrobot:greendao:3.2.2'
+    compile 'net.zetetic:android-database-sqlcipher:3.5.4@aar'
 
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'

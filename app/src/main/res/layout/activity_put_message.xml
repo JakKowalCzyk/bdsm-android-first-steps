@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.kowalczyk.bdsm.PutMessageActivity">
+        tools:context="com.kowalczyk.bdsm.activity.PutMessageActivity">
 
     <EditText
             android:layout_width="wrap_content"
@@ -30,13 +30,14 @@
             app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent"
             android:id="@+id/textView2" tools:layout_constraintTop_creator="1" tools:layout_constraintRight_creator="1"
             android:layout_marginTop="113dp" tools:layout_constraintLeft_creator="1"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" android:textStyle="bold" android:textColor="#1A237E"
+            android:textSize="24sp" android:fontFamily="monospace"/>
     <Button
-            android:text="Button"
+            android:text="Go!"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/button2"
             app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent"
             tools:layout_constraintRight_creator="1" tools:layout_constraintBottom_creator="1"
             app:layout_constraintBottom_toBottomOf="parent" tools:layout_constraintLeft_creator="1"
-            android:layout_marginBottom="64dp"/>
+            android:layout_marginBottom="64dp" android:textStyle="bold"/>
 </android.support.constraint.ConstraintLayout>

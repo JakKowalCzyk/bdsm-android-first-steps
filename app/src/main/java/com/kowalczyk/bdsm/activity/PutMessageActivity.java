@@ -1,13 +1,15 @@
-package com.kowalczyk.bdsm;
+package com.kowalczyk.bdsm.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import org.apache.commons.codec.binary.Hex;
-import org.apache.commons.codec.digest.DigestUtils;
+import com.kowalczyk.bdsm.DatabaseInit;
+import com.kowalczyk.bdsm.R;
+import com.kowalczyk.bdsm.model.Secret;
+import com.kowalczyk.bdsm.model.SecretDao;
 
 public class PutMessageActivity extends AppCompatActivity {
 
@@ -29,11 +31,20 @@ public class PutMessageActivity extends AppCompatActivity {
                                                   @Override
                                                   public void onClick(View v) {
                                                       String redMessage = ((EditText) findViewById(R.id.editText5)).getText().toString();
-                                                      MessageStore.message = new String(Hex.encodeHex(DigestUtils.md5(redMessage)));
+
+                                                      Secret secret = getSecretDao().load(1L);
+                                                      secret.setSecret(redMessage);
+                                                      getSecretDao().update(secret);
+
                                                       Intent i = new Intent(getApplicationContext(), DisplayMessageActivity.class);
                                                       startActivity(i);
                                                   }
                                               }
         );
     }
+
+    private SecretDao getSecretDao() {
+        return ((DatabaseInit) getApplication()).getDaoSession().getSecretDao();
+    }
+
 }

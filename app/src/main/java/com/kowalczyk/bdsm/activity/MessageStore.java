@@ -1,4 +1,4 @@
-package com.kowalczyk.bdsm;
+package com.kowalczyk.bdsm.activity;
 
 /**
  * Created by JKowalczyk on 2017-10-24.
